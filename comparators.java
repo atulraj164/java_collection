@@ -109,5 +109,13 @@ public class comparators {
 	 for(Employe e:emp) {
 		 e.show();
 	 }
+		 // USING LAMDA FUNCTION
+	 
+	 System.out.println("using lamda");
+	 Comparator <Integer> compi=(Integer i,Integer j)-> (i>j)?1: -1;
+	 List<Integer> a2=Arrays.asList(1,4,3,6,8,7);
+	 Collections.sort(a2,compi);
+	 System.out.println(a2);
+	 
 	}
 }
