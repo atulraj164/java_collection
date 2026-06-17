@@ -1,0 +1,23 @@
+
+public class ArraayList {
+ public static void main(String[] args) {
+	 //constructors
+	
+	 ArrayList a1=new ArrayList();
+	
+	 //quivalent array of another collection
+	 ArrayList a3=new ArrayList(a1);
+	 //ArrayList with defined capacity
+	 ArrayList a4=new ArrayList(10);
+	 
+	 
+	 a1.add(9);
+	 //making List synchronised
+	 List a2=Collections.synchronizedList(a1);
+	 
+	System.out.println(a3.get(0)) ; 
+
+}
+}
+
+
