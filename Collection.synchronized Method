@@ -1,0 +1,30 @@
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Collection_Class {
+  public static void main(String[] args) {
+	
+	  //Synchronised method of Collection
+	  
+	  //making map synchronised
+	 HashMap map=new HashMap();
+	 Map map1=Collections.synchronizedMap(map);//return reffrence of map
+	 
+	 //making set synchronised
+	 
+	 HashSet set=new HashSet();
+	 Set set1=Collections.synchronizedSet(set);
+	 
+	 //making ArrayListSynchronised
+	 ArrayList a1=new ArrayList();
+	 List a2=Collections.synchronizedList(a1);
+	  
+	  
+}
+}
