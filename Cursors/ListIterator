@@ -1,0 +1,46 @@
+package Cursors;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
+
+//improvment forward + backward element retrivel
+//set method to replace value introduced 
+//only for LIst 
+
+public class ListIterator_cursor {
+       public static void main(String[] args) {
+		List <Integer> l1=new ArrayList<>();
+		
+		l1.add(8);
+		l1.add(9);
+		l1.add(2);
+		l1.add(7);
+		l1.add(6);
+		l1.add(2);
+		l1.add(4);
+		l1.add(1);
+		
+		 //System.out.println(l1);
+		
+		 ListIterator  <Integer> iterate=l1.listIterator();
+		    while(iterate.hasNext()) {
+
+		    	if((iterate.next())%2!=0 ) {    		
+                      iterate.set(2);
+		    	}
+		    }
+
+		  System.out.println(l1);
+		  System.out.println(iterate.hasNext());
+		  while(iterate.hasPrevious()) {
+
+		    	if((iterate.previous())%2!=0 ) {    		
+                    iterate.set(1);
+		    	}
+		    }
+		  System.out.println(l1);
+	}
+}
