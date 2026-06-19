@@ -1,0 +1,45 @@
+package Cursors;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AnonymusObject {
+	
+interface implementationInterface{
+	public void add(int var);
+}
+
+public static class implement{
+	public implement() {
+		
+	}
+	public implementationInterface anonymusObject(){
+		 implementationInterface imp=new implementationInterface() {
+			 List<Integer>list=new ArrayList<>();
+			 @Override
+			 public void add(int var) {
+				 list.add(var);
+			 }
+			 public void show() {
+				 System.out.println(list);
+			 }
+			
+			 
+		 };
+		return imp;
+	 }
+}
+public static void main(String[] args) {
+	//creates anonymus object and provide reffrence variable of interface type 
+	//same procedure used by Enumeration e=v.enumeration();
+	
+	implement imp=new implement();
+	implementationInterface intra= imp.anonymusObject();
+ intra.add(3);
+ intra.add(22);
+ intra.add(31);
+ 
+ //can aces only ovveriden method as it is inetrface reffrence and compilar decides it to
+ //acces only its own methods
+}
+}
