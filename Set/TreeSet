@@ -1,0 +1,140 @@
+package Set;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.TreeSet;
+
+
+
+
+public class treeset {
+	static class students implements Comparable<students>{
+		   String name;
+		   int marks;
+		   
+		  public students(String name,int marks) {
+			  this.name=name;
+			  this.marks=marks;
+		  }
+
+		@Override
+		public int compareTo(students o) {	
+			return Integer.compare(this.marks, o.marks);//return -value ascen
+		}
+		
+	}
+	
+	static class Mycomparator implements Comparator{
+		@Override 	
+		public int compare(Object obj1, Object obj2){
+			String s1=(String) obj1.toString();
+			String s2=(String) obj2.toString();
+			if(s1.length()<s2.length()) {
+				return -1;
+			}
+			else if(s1.length()>s2.length()) {
+				return +1;
+			}
+			return 0;
+		}
+	}
+	
+	//descending to ascending
+	
+	static class Mycomparator1 implements Comparator{
+		@Override 	
+		public int compare(Object obj1, Object obj2){
+			String s1=(String) obj1;
+			String s2=(String) obj2;
+			if(s1.length()<s2.length()) {
+				return +1;
+			}
+			else if(s1.length()>s2.length()) {
+				return -1;
+			}
+			return 0;
+		}
+	}
+ public static void main(String[] args) {
+	 
+	 //impl class for navigable ser and sorted set
+	 //unique, homogenious,sorted,
+	 
+	 
+	 //default sorting order only for wrapper class and string use comparable
+	 
+	 //constructor1
+	 TreeSet t=new TreeSet();
+	 t.add("hat");
+	 t.add("hate");
+	 t.add("at");
+	 t.add("noooot");
+	 t.add("back");
+	 t.add("lifeofpie");
+	 
+	 //sorted based on lexographic order of first latter
+	 System.out.println(t);
+	 
+	 //custom sorting order using comparator based on length of string ascending to descending
+	 //IT CAN STotre hetrogenous object
+	 
+	//using eault sorting and comparable for non wrapper or string or the classes
+		 //that not implement comparable
+
+	  //constructor1
+	 TreeSet studentset=new TreeSet();
+	  studentset.add(new students("raja babu",77));
+	  studentset.add(new students("prem babu",27));
+	  studentset.add(new students("naman babu",47));
+	  studentset.add(new students("chaman babu",87));
+	  studentset.add(new students("raman babu",97));
+	  
+       Iterator<students>it=studentset.iterator();
+       
+       while(it.hasNext()) {
+    	   students s=it.next();
+    	   System.out.println(s.name +"  "+s.marks);
+       }
+	 
+	 //constructor2
+	 TreeSet t1=new TreeSet(new Mycomparator());
+	 t1.add("hat");
+	 t1.add("mdmm");
+	 t1.add("at");
+	 t1.add(new StringBuffer("noooot"));
+	 t1.add("back");
+	 t1.add("lifeofpie");
+	 
+	 System.out.println(t1);
+	 
+	 	 
+	 
+     //custom sorting order using comparator based on length of string descending to ascending
+	 
+	 //constructor2
+	 TreeSet t2=new TreeSet(new Mycomparator1());
+	 t2.add("hat");
+	 t2.add("mdmm");
+	 t2.add("gviu");
+	 t2.add("back");
+	 t2.add("lifeofpie");
+	 System.out.println(t2);
+	 
+	 //constructor3    equivlaent treeset from collection
+	 Collection c=new ArrayList();
+	 c.add(90);
+	 c.add(20);
+	 c.add(80);
+	 c.add(40);
+	 c.add(10);
+	
+	 TreeSet t3=new TreeSet(c);
+	 System.out.println(t3);
+	 
+	 //constructor 4 
+	 TreeSet t4=new TreeSet(t2);
+	 System.out.println(t4);
+}
+}
