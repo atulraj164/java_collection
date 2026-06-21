@@ -1,0 +1,11 @@
+package Set;
+
+import java.util.*;
+public class sortedset {
+  public static void main(String[] args) {
+	//Interface store unique homogenious data in sorted order(custom or default order)
+	  
+	 
+	  
+}
+}
