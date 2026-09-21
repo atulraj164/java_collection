@@ -1,0 +1,29 @@
+package Set;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+import CollectionFramework.comparator;
+
+public class TreeSetWithComparator {
+
+	
+	//produce ascending order result default comparator 
+	TreeSet<Integer>set=new TreeSet<>();
+	
+	//produce descending order result custom comparator without lamda
+	
+	TreeSet<Integer>revset=new TreeSet<>(new Comparator<Integer>() {
+
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	}
+	);
+	
+	//produce descending order result custom comparator with lamda
+	TreeSet<Integer>reverseset=new TreeSet<>((a,b)->Integer.compare(b, a));
+	
+}
