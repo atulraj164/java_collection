@@ -1,0 +1,32 @@
+package Map;
+
+import java.util.Hashtable;
+
+
+public class HashTable {
+	 static class temp{
+			int cnt;
+			public temp(int cnt){
+				this.cnt=cnt;
+			}
+			public int hashCode() {
+				return cnt;
+			}
+			public String toString() {
+				return "this is "+cnt+" object";
+			}
+	 }
+  public static void main(String[] args) {
+	Hashtable ht=new Hashtable();
+	ht.put(new temp(1), "atul");
+	ht.put(new temp(2), "raj");
+	ht.put(new temp(3), "kumar");
+	ht.put(new temp(4), "karn");
+	System.out.println(ht);
+	
+	temp t=new temp(2);
+	System.out.println(t.hashCode());
+
+	
+}
+}
